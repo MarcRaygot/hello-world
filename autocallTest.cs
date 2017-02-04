@@ -16,8 +16,7 @@ namespace AuticallPricer
             Date todaysDate = new Date(1, Month.February, 2017);
             Date settlementDate = todaysDate;
             Settings.setEvaluationDate(todaysDate);
-
-
+            
             //build autocall
             double coupon = 0.05;
             double barrierlvl = 0.6;
@@ -44,7 +43,6 @@ namespace AuticallPricer
             Console.WriteLine("Volatility = {0:0.000%}", volatility);
             Console.Write("\n");
 
-
             Handle<Quote> underlyingH = new Handle<Quote>(new SimpleQuote(underlying));
 
             // bootstrap the yield/dividend/vol curves
@@ -62,14 +60,6 @@ namespace AuticallPricer
                                             .value();
 
             myautocall.setPricingEngine(mcengine1);
-
-            
-
-
-
-
-
-
             Console.ReadLine();
         }
     }
